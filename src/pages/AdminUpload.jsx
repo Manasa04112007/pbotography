@@ -55,7 +55,7 @@ function AdminUpload() {
 
     try {
       setLoading(true);
-      await API.post("/gallery/upload", formData);
+      await API.post("api/gallery/upload", formData);
       alert("✅ Gallery image uploaded");
       setGalleryImage(null);
     } catch {
@@ -75,7 +75,7 @@ function AdminUpload() {
 
     try {
       setLoading(true);
-      await API.post("/events/upload", formData);
+      await API.post("api/events/upload", formData);
       alert("✅ Event uploaded");
       setEventImage(null);
       setEventName("");

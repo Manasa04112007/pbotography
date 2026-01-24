@@ -1,7 +1,15 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { SignOutButton } from "@clerk/clerk-react";
+import { useClerk } from "@clerk/clerk-react";
 
 function AdminDashboard() {
+  const { signOut } = useClerk();
+
+  const handleLogout = async () => {
+    await signOut({
+      redirectUrl: "/admin", // 👈 Clerk login page
+    });
+  };
+
   return (
     <div style={styles.wrapper}>
       {/* SIDEBAR */}
@@ -31,9 +39,10 @@ function AdminDashboard() {
           </nav>
         </div>
 
-        <SignOutButton>
-          <button style={styles.logout}>Sign Out</button>
-        </SignOutButton>
+        {/* LOGOUT BUTTON */}
+        <button style={styles.logout} onClick={handleLogout}>
+          Sign Out
+        </button>
       </aside>
 
       {/* MAIN CONTENT */}
@@ -90,7 +99,6 @@ const styles = {
     borderRadius: "8px",
     fontWeight: "500",
     transition: "all 0.2s ease",
-    background: "transparent",
   },
 
   activeLink: {
@@ -112,7 +120,6 @@ const styles = {
     borderRadius: "8px",
     cursor: "pointer",
     fontWeight: "600",
-    transition: "background 0.2s ease",
   },
 
   content: {
