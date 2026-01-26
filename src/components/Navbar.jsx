@@ -141,7 +141,7 @@ export default function Navbar() {
           <NavItem to="/" label="Home" location={location} setOpen={setOpen} />
           <NavItem to="/about" label="About" location={location} setOpen={setOpen} />
           <NavItem to="/gallery" label="Gallery" location={location} setOpen={setOpen} />
-          <NavItem to="/events" label="Services" location={location} setOpen={setOpen} />
+          <NavItem to="/events" label="Events" location={location} setOpen={setOpen} />
           <NavItem to="/contact" label="Contact" location={location} setOpen={setOpen} />
 
           <Link to="/admin" className="admin" onClick={() => setOpen(false)}>
