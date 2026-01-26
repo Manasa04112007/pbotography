@@ -13,7 +13,7 @@ function Events() {
 
   return (
     <div style={styles.container}>
-      <h2> Services </h2>
+      <h2> Events </h2>
 
       <div style={styles.grid}>
         {events.map((event) => (
