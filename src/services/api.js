@@ -1,8 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://photograph-backend.vercel.app/',
-  withCredentials: true,
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  // ❌ REMOVE THIS LINE
+  // withCredentials: true,
 });
 
 export default API;
